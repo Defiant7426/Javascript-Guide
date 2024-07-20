@@ -121,5 +121,3 @@ The code above shows how a variable is assigned an `undefined` value if it has b
 Output:
 
 ![Untitled](Javascript-Guide%2039f176c34d9c40fdb1fcd5cc2e1d4790/Untitled%204.png)
-
-![Javascript-Guide%2039f176c34d9c40fdb1fcd5cc2e1d4790/Untitled%205.png](Javascript-Guide%2039f176c34d9c40fdb1fcd5cc2e1d4790/Untitled%205.png)
