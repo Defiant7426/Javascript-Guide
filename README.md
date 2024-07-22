@@ -332,3 +332,109 @@ console.log(`The product is ${product} and its price is $${price} USD`);
 ![Javascript-Guide%2039f176c34d9c40fdb1fcd5cc2e1d4790/Untitled%209.png](Javascript-Guide%2039f176c34d9c40fdb1fcd5cc2e1d4790/Untitled%209.png)
 
 The code above showcases different ways to concatenate strings in JavaScript. Using template literals (backticks) is a more modern and readable approach compared to the traditional concatenation using the plus (`+`) operator.
+
+# 6. Arrays
+
+```jsx
+// Arrays
+
+const numbers = [20, 30, 40, 50, 60];
+
+console.table(numbers); // Shows the array in a table format
+
+console.log(numbers[2]); // Access the element in the 3nd position
+
+console.log(numbers[10]); // undefined
+
+const elements = ['Hello', 123, true, null, undefined]; // Different types of data
+
+console.table(elements);
+```
+
+The code above demonstrates how to create and use arrays in JavaScript. Arrays can contain elements of different data types and can be accessed using their index positions. The `console.table()` method provides a convenient way to display array elements in a tabular format.
+
+Output:
+
+![Untitled](Javascript-Guide%2039f176c34d9c40fdb1fcd5cc2e1d4790/Untitled%2010.png)
+
+## Modify the Array
+
+```jsx
+const tech = ['HTML', 'CSS', 'JavaScript', 'React'];
+
+console.table(tech);
+
+tech[3] = 'React Native'; // Modify the element in the 4th position
+
+console.table(tech);
+
+tech.push('Node.js'); // Add an element at the end of the array
+
+console.table(tech);
+
+tech.unshift('Angular'); // Add an element at the beginning of the array
+
+console.table(tech);
+
+tech.pop(); // Remove the last element of the array
+
+console.table(tech);
+
+tech.shift(); // Remove the first element of the array
+
+console.table(tech);
+```
+
+The code above shows various methods to modify an array in JavaScript. These methods allow you to change elements, add new elements to the beginning or end of the array, and remove elements from the beginning or end of the array, providing flexible ways to manage array contents.
+
+## Spread Operator
+
+```jsx
+const newArray = [...tech, "Vue.js"]; // Add an element at the end of the array
+
+console.table(newArray);
+
+console.table(tech); // The original array remains the same
+```
+
+The spread operator (`...`) allows you to create a new array by combining elements from an existing array with additional elements. This method keeps the original array unchanged while creating a modified copy.
+
+## Filter and map
+
+```jsx
+// Filter and Map
+
+const tech = ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Vue.js'];
+
+const tech2 = tech.filter(function (element) {
+    return element !== 'React';
+});
+
+console.table(tech2); // ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Vue.js']
+
+const tech3 = tech.map(function (element) {
+    return element.toUpperCase();
+});
+
+console.table(tech3); // ['HTML', 'CSS', 'JAVASCRIPT', 'REACT', 'NODE.JS', 'VUE.JS']
+```
+
+The code above demonstrates how to use the `filter` and `map` methods to manipulate arrays. `filter` creates a new array with all elements that pass the test implemented by the provided function, while `map` creates a new array with the results of calling a provided function on every element in the calling array.
+
+## Array Destructuring
+
+```jsx
+const tech = ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Vue.js'];
+
+const [html, css] = tech;
+
+console.log(html); // Output: HTML
+console.log(css); // Output: CSS
+
+const [ , , js, react] = tech; // Skip HTML and CSS
+
+console.log(js); // Output: JavaScript
+console.log(react); // Output: React
+```
+
+The code above shows how to use array destructuring to extract values from an array into distinct variables. By using commas, you can skip elements you don't need, making the code more concise and readable.
