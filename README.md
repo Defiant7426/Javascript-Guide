@@ -421,6 +421,18 @@ console.table(tech3); // ['HTML', 'CSS', 'JAVASCRIPT', 'REACT', 'NODE.JS', 'VUE.
 
 The code above demonstrates how to use the `filter` and `map` methods to manipulate arrays. `filter` creates a new array with all elements that pass the test implemented by the provided function, while `map` creates a new array with the results of calling a provided function on every element in the calling array.
 
+Filter can also be written as following:
+
+```jsx
+const tech3 = tech.filter((element) => element !== 'React'))
+```
+
+or
+
+```jsx
+const tech3 = tech.filter(element => element !== 'React'))
+```
+
 ## Array Destructuring
 
 ```jsx
@@ -438,3 +450,84 @@ console.log(react); // Output: React
 ```
 
 The code above shows how to use array destructuring to extract values from an array into distinct variables. By using commas, you can skip elements you don't need, making the code more concise and readable.
+
+## Includes
+
+```jsx
+const fruits = ['Apple', 'Banana', 'Orange', 'Grape'];
+
+const res = fruits.includes('Banana');
+
+console.log(res);
+```
+
+Explicaction:
+
+The `includes` method checks if a certain element exists in an array, returning `true` if it is found and `false` otherwise. This method is useful for quickly determining the presence of a specific value within an array.
+
+## Iterating through arrays
+
+### For loop
+
+```sql
+const technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'];
+
+// for loop
+for (let i = 0; i < technologies.length; i++) {
+    console.log(technologies[i]);
+}
+```
+
+This traditional loop allows you to access each element in the array by its index, making it useful for performing operations on array elements.
+
+### For-each
+
+```sql
+// forEach
+technologies.forEach(function(technology) {
+    console.log(technology);
+});
+```
+
+The `forEach` method executes a provided function once for each array element, making it a more concise and readable alternative to the traditional `for` loop.
+
+### For of
+
+```sql
+// for of
+for (let technology of technologies) {
+    console.log(technology);
+}
+```
+
+The `for...of` loop provides a clean and concise syntax for iterating over iterable objects like arrays, making it easier to read and maintain.
+
+# Functions
+
+## Function declaration
+
+```jsx
+function sum(a, b) {
+    return a + b;
+}
+
+console.log(sum(2, 3));
+```
+
+## Function expression
+
+```jsx
+function sum2(a, b) {
+    return a + b;
+}
+
+console.log(sum2(4, 3));
+```
+
+## Arrow functions
+
+```jsx
+const sum3 = (a, b) => a + b; // If the function has only one line, the return statement is implicit
+
+console.log(sum3(5, 3));
+```

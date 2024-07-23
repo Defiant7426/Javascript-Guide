@@ -43,3 +43,11 @@ const newArray = [...tech, "Vue.js"]; // Add an element at the end of the array
 console.table(newArray);
 
 console.table(tech); // The original array remains the same
+
+// includes
+
+const fruits = ['Apple', 'Banana', 'Orange', 'Grape'];
+
+const res = fruits.includes('Banana');
+
+console.log(res);
