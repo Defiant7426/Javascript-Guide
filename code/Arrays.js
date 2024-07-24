@@ -51,3 +51,19 @@ const fruits = ['Apple', 'Banana', 'Orange', 'Grape'];
 const res = fruits.includes('Banana');
 
 console.log(res);
+
+// some - Check if at least one element meets the condition
+
+const ages = [20, 30, 40, 50, 60];
+
+const res2 = ages.some(age => age > 50);
+
+console.log(res2);
+
+// reduce - Accumulate the values of an array
+
+const numbers2 = [1, 2, 3, 4, 5];
+
+const res3 = numbers2.reduce((total, current) => total + current, 0);
+
+console.log(res3); // 15

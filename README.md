@@ -465,6 +465,56 @@ Explicaction:
 
 The `includes` method checks if a certain element exists in an array, returning `true` if it is found and `false` otherwise. This method is useful for quickly determining the presence of a specific value within an array.
 
+## Some
+
+```jsx
+const ages = [20, 30, 40, 50, 60];
+
+const res2 = ages.some(age => age > 50);
+
+console.log(res2);
+```
+
+The `some` method checks if at least one element meets the condition.
+
+## Find
+
+```jsx
+const ages = [20, 30, 40, 50, 60];
+
+const res4 = ages.find(age => age > 40);
+
+console.log(res4);
+
+```
+
+The `find` method returns the value of the first element in the array that satisfies the provided testing function. If no elements satisfy the testing function, it returns `undefined`.
+
+## Every
+
+```jsx
+const ages = [20, 30, 40, 50, 60];
+
+const res3 = ages.every(age => age > 10);
+
+console.log(res3);
+
+```
+
+The `every` method tests whether all elements in the array pass the test implemented by the provided function. It returns `true` if all elements pass the test, otherwise `false`.
+
+## Reduce
+
+```jsx
+const numbers2 = [1, 2, 3, 4, 5];
+
+const res3 = numbers2.reduce((total, current) => total + current, 0);
+
+console.log(res3); // 15
+```
+
+The `reduce` method accumulates the values of an array.
+
 ## Iterating through arrays
 
 ### For loop
@@ -531,3 +581,44 @@ const sum3 = (a, b) => a + b; // If the function has only one line, the return s
 
 console.log(sum3(5, 3));
 ```
+
+# Optional chaining
+
+Optional chaining is a new feature in JavaScript that allows you to access deeply nested object properties without worrying if the property exists or not. It is a way to simplify the process of accessing nested properties of an object.
+
+```jsx
+const user = {
+    name: 'John',
+    age: 30,
+    address: {
+        city: 'New York',
+        zipCode: '10001'
+    }
+};
+
+console.log(user.name); // John
+
+console.log("This line is executed");
+
+console.log(user.address.street); // Uncaught TypeError: Cannot read property 'street' of undefined
+
+console.log("This line is not executed");
+
+// The error occurs because the street property does not exist in the address object. To avoid this error, you can use the optional chaining operator ?. to access the street property.
+
+console.log(user.address?.street); // undefined
+
+console.log("This line is executed");
+```
+
+# Nullish coalescing operator
+
+The nullish coalescing operator ?? is another new feature in JavaScript that allows you to provide a default value when accessing a property that may be null or undefined.
+
+```jsx
+const street = user.address?.street ?? 'Other street';
+
+console.log(street); // Other street
+```
+
+In this example, the street property does not exist in the address object, so the nullish coalescing operator returns the default value 'Other street'.
