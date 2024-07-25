@@ -552,7 +552,7 @@ for (let technology of technologies) {
 
 The `for...of` loop provides a clean and concise syntax for iterating over iterable objects like arrays, making it easier to read and maintain.
 
-# Functions
+# 7. Functions
 
 ## Function declaration
 
@@ -582,7 +582,7 @@ const sum3 = (a, b) => a + b; // If the function has only one line, the return s
 console.log(sum3(5, 3));
 ```
 
-# Optional chaining
+# 8. Optional chaining
 
 Optional chaining is a new feature in JavaScript that allows you to access deeply nested object properties without worrying if the property exists or not. It is a way to simplify the process of accessing nested properties of an object.
 
@@ -611,7 +611,7 @@ console.log(user.address?.street); // undefined
 console.log("This line is executed");
 ```
 
-# Nullish coalescing operator
+# 9. Nullish coalescing operator
 
 The nullish coalescing operator ?? is another new feature in JavaScript that allows you to provide a default value when accessing a property that may be null or undefined.
 
@@ -622,3 +622,38 @@ console.log(street); // Other street
 ```
 
 In this example, the street property does not exist in the address object, so the nullish coalescing operator returns the default value 'Other street'.
+
+# 10. ECMAScript Modules
+
+ECMAScript modules are the official standard format to package JavaScript code for reuse. They are defined in the ECMAScript standard on a high level, and supported in most modern browsers. The old-school approach was using scripts to load files, but that has some disadvantages, such as global variables, no dependency management, and no way to share code between files. Modules solve these problems.
+
+First, in the HTML file, do:
+
+```jsx
+<script src="js/ECMAScript_Modules.js" type="module"></script>
+```
+
+Then, in your JavaScript files, you can use the `import` and `export` keywords to share code between files.
+
+For example, in `funcions2.js`:
+
+```jsx
+export function sum(a, b) {
+    return a + b;
+}
+
+export function subtract(a, b) {
+    return a - b;
+} 
+
+```
+
+And in `ECMAScript_Modules.js` :
+
+```jsx
+import { sum, subtract } from './functions2.js'; // Import the functions
+
+console.log(sum(2, 3)); // 5
+
+console.log(subtract(5, 3)); // 2
+```
