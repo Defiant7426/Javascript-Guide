@@ -657,3 +657,128 @@ console.log(sum(2, 3)); // 5
 
 console.log(subtract(5, 3)); // 2
 ```
+
+It can also be exported in the following way:
+
+```jsx
+function sum(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+export { sum, subtract };
+```
+
+you can put an alias as:
+
+```jsx
+import { sum as sumFuntion,subtract as subtractFunction } from './functions2.js'; // Import the functions
+```
+
+## Export default
+
+```jsx
+// Export default
+
+export default function multiply(a, b) {
+    return a * b;
+}
+
+```
+
+The `export default` syntax allows you to export a single value from a module, which can be imported without curly braces in other files. This is useful for exporting the main functionality of a module.
+
+```jsx
+import mp, { sum, subtract } from './functions2.js'; // Import the functions
+
+console.log(sum(2, 3)); // 5
+
+console.log(subtract(5, 3)); // 2
+
+console.log(mp(2, 3)); // 6
+```
+
+# 11. Fetch API with Promises
+
+The Fetch API provides an easy way to make network requests and handle responses. It returns a promise that resolves to the Response object representing the response to the request.
+
+```jsx
+const url = 'https://jsonplaceholder.typicode.com/comments';
+
+fetch(url)
+    .then(response => { // The response object contains the response from the server
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json(); // The json() method returns a promise that resolves with the result of parsing the body text as JSON
+    })  // The json() method returns a promise that resolves with the result of parsing the body text as JSON
+    .then(data => { 
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+```
+
+# 12. Fetch API with Async/Await
+
+The Fetch API can also be used with async/await syntax, which makes the code more readable and easier to understand.
+
+```jsx
+const url = 'https://jsonplaceholder.typicode.com/comments';
+
+const fetchData = async () => { // The async function declaration defines an asynchronous function
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+fetchData();
+```
+
+Using async/await allows you to write asynchronous code that looks and behaves like synchronous code, making it easier to read and maintain.
+
+# 13. Measure performance
+
+You can measure the performance of your JavaScript code using the `performance` API. This allows you to time the execution of code blocks and identify bottlenecks.
+
+```jsx
+const url = 'https://jsonplaceholder.typicode.com/comments';
+
+const fetchData = async () => { // The async function declaration defines an asynchronous function
+    try {
+
+        const start = performance.now();
+
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data);
+
+        const end = performance.now();
+
+        console.log(`Time taken: ${end - start}ms`);
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+fetchData();
+```
+
+The code above demonstrates how to use the `performance.now()` method to measure the execution time of a code block. 
+
+![Untitled](Javascript-Guide%2039f176c34d9c40fdb1fcd5cc2e1d4790/Untitled%2011.png)
